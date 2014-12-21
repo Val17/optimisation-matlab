@@ -6,6 +6,10 @@ function x = BFGS(x, epsilon, beta1, beta2, lambda)
 
 iterations = 0;
 
+% Pour connaître le temps de calcul, on utilise les fonctions tic et toc.
+
+tic
+
 d_tilda = 0;
 
 % On initialise les calculs "ci" utilisés dans notre algorithme
@@ -65,7 +69,7 @@ while (norm(gradient_Rosenbrock(x)) > epsilon)
     % On trace le cheminement du point courant au cours de sitérations
     % sur une courbe de niveau.
 
-    plot(x(1),x(2),'+');
+    plot(x(1),x(2),'+', 'MarkerEdgeColor','r');
     
     % On incremente le compteur d'iterations
     iterations = iterations + 1;
@@ -73,12 +77,18 @@ while (norm(gradient_Rosenbrock(x)) > epsilon)
 end
 
 % On affiche le nombre d'itérations
-
 iterations
-
-% On affiche le résultat
-
+% On affiche le resultat trouvé
+disp('Vecteur trouvé');
 x
-
-
+% On évalue la fonction coût en ce point:
+disp('Fonction coût en ce point');
+Rosenbrock(x)
+% On évalue la qualité de la solution:
+disp('Qualité de la solution');
+max(gradient_Rosenbrock(x))
+% On affiche le temps de calcul de cette méthode
+disp('Temps de calcul: BFGS');
+toc
+    
 end

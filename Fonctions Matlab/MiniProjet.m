@@ -32,9 +32,18 @@ beta2 = 0.99;
 lambda = 20;
 figure;
 title('Methode de descente a forte pente');
-contour(X,Y,R);
 hold on;
+contour(X,Y,R);
 S = steepest_descent(x,epsilon, beta1, beta2, lambda);
+%% Résultats obtenus
+% Le vecteur trouvé est le vecteur: xf = (0.9989;0.9978).
+% On attendait le vecteur (1;1).
+% De plus, le nombre d'itérations est de 1589.
+% Enfin, la durée que mettent l'algorithme pour converger vers une solution
+% satisfaisant les conditions imposées est de 3,6 sec.
+%% Premières conclusions
+% Ainsi, cette méthode n'est pas adapté à notre problème: la solution
+% toruvée n'est pas la solution attendue
 %% Question 3 
 % Nous allons utiliser la méthode de Newton avec recherche linéaire.
 % Pour cela, nous utilisons le fichier newton_lineaire.m.
