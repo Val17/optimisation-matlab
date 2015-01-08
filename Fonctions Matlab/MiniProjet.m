@@ -31,7 +31,7 @@ beta1 = 0.001;
 beta2 = 0.99;
 lambda = 20;
 figure;
-title('Methode de descente a forte pente');
+title('Methode de la plus forte pente');
 hold on;
 contour(X,Y,R);
 S = steepest_descent(x,epsilon, beta1, beta2, lambda);
@@ -55,7 +55,7 @@ beta1 = 0.001;
 beta2 = 0.99;
 lambda = 25;
 figure;
-title('Methode de Newton lineaire');
+title('Methode de Newton avec recherche linéaire');
 hold on;
 contour (X,Y,R);
 N = newton_lineaire(x, epsilon, beta1, beta2, lambda);
@@ -74,3 +74,11 @@ title('Methode quasi-Newton BFGS');
 hold on;
 contour (X,Y,R);
 B = BFGS(x, epsilon, beta1, beta2, lambda);
+%%
+% Question 5
+% Nous allons à présent définir un problèeme de notre quotidien et utiliser
+% les méthodes que nous avons utilisés précedemment.
+%%
+a = 0;
+b = 0;
+g = 16 * a + 10 * b;
